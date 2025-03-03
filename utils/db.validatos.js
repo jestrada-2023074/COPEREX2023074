@@ -1,4 +1,4 @@
-import User from '../src/user/user.model.js'
+import User from '../src/users/user.model.js'
 export const existUsername = async (username, user, id)=>{
     const alreadyUsername =  await User.findOne({username})
     if(alreadyUsername && !alreadyUsername._id != user._id){

@@ -1,12 +1,8 @@
 //Controller of user
-import User from '../user/user.model.js'
+import User from '../users/user.model.js'
 import { checkPassword, encrypt } from '../../utils/encrypt.js'
 import { generateJwt } from '../../utils/jwt.js'
 
-export const test = (req, res)=>{
-    console.log('Test is running')
-    res.send({message: 'Test is running'})
-}
 
 //Register
 export const register = async(req, res)=>{
@@ -14,7 +10,7 @@ export const register = async(req, res)=>{
         let data = req.body
         let user = new User(data)
         user.password = await encrypt(user.password)
-        user.role = 'CLIENT'
+        user.role = 'ADMIN'
         user.profilePicture = req.file.filename ?? null
         await user.save()
         return res.send({message: `Registered successfully, can be login with username: ${user.username}`})
@@ -58,7 +54,7 @@ export const login = async(req, res)=>{
         return res.status(500).send({message: 'General error with login function', err})
     }
 }
-
+//Get alll Users
 export const getAll = async(req,res)=>{
     try{
         const { limit = 20, skip = 0 } = req.query
@@ -93,13 +89,9 @@ export const getAll = async(req,res)=>{
     }
 }
  
-//gey
-
- 
- 
+//get user by id
 export const getUserid = async(req, res)=>{
     try {
-        //obtener el id del Producto a mostrar
         let { id } = req.params
         let user = await User.findById(id)
  
@@ -128,7 +120,7 @@ export const getUserid = async(req, res)=>{
     }
 }
  
-//Actualizar datos generales
+//Update general data
 export const update = async(req, res)=>{
     try{
         const { id } = req.params
@@ -166,11 +158,7 @@ export const update = async(req, res)=>{
     }
 }
  
-//Actualizar profilePicture
- 
-//Actualizar password ****
-
-//Eliminar User 
+//Delete User 
 export const deleteUser = async(req,res)=>{
     try{
         let { id } = req.params
@@ -198,6 +186,7 @@ export const deleteUser = async(req,res)=>{
         )
     }
 }
+//Update password ****
 export const updatePassword = async (req, res) => {
     try {
         const { id } = req.params;
@@ -234,5 +223,41 @@ export const updatePassword = async (req, res) => {
             message: "General error",
             error
         })
+    }
+}
+//update profoñle pciture
+export const updateProfilePicture = async(req, res)=>{
+    try{
+        const { uid } = req.user
+        const { filename } = req.file
+        const user = await User.findByIdAndUpdate(
+            uid,
+            {
+                profilePicture: filename
+            },
+            { new: true }
+        )
+        if(!user) return res.status(404).send(
+            {
+                success: false,
+                message: 'User not found - not updated'
+            }
+        )
+        return res.send(
+            {
+                success: true,
+                message: 'User updated successfully',
+                user
+            }
+        )
+    }catch(err){
+        console.error('General error', err)
+        return res.status(500).send(
+            {
+                success: false,
+                message: 'General error', 
+                err
+            }
+        )
     }
 }

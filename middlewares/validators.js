@@ -1,6 +1,6 @@
 import { body } from "express-validator";
 import { validateErrores } from "./validate.errors.js";
-import { existEmail, existUsername, notRequiredField } from "../utils/db,validators.js";
+import { existEmail, existUsername, notRequiredField } from "../utils/db.validatos.js";
 import { validateErrorsWhitoutFiles } from "./validate.errors.js";
 
 export const registerValidator =[

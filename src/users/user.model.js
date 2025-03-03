@@ -1,5 +1,4 @@
 //Modelo de usuario
-
 import { Schema, model } from 'mongoose'
 
 const userSchema = Schema(

@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "743d3c6a-c113-44de-bbde-098cc2dfa647",
+		"name": "COPEREX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956963"
+	},
+	"item": [
+		{
+			"name": "CRUDAdmin",
+			"item": [
+				{
+					"name": "IniciarSesion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "r",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLoggin",
+									"value": "chewe",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/login",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jose",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Estrada",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "KJOASDJOAS",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "AJSSAJA@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "36963698",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUserbyID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/user/67c504a0c60833cda1cc641c",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"67c504a0c60833cda1cc641c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerTodosUsers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatepasword",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1MDRhMGM2MDgzM2NkYTFjYzY0MWMiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6IkFsZWphbmRybyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MDk2NTEyMCwiZXhwIjoxNzQwOTc1OTIwfQ.rNOajt8SjXHP2Hj_fGJFuBb-JQUm-lCDSgKJvva6krg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "12SpiderM@n34.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/password/67c504a0c60833cda1cc641c",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"password",
+								"67c504a0c60833cda1cc641c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzI2OGUwZjE3Nzk1NTU5MzI1ZjIiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzM5NTcxODMwLCJleHAiOjE3Mzk1ODI2MzB9.kfthTH5sA1NYVUugy0RoHp5GhpK0u6f8icKfykbbMkE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afc268e0f17795559325f2",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afc268e0f17795559325f2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1MDYzMTVlNDA5NDlkMzBhMThkZTIiLCJ1c2VybmFtZSI6ImNoZXdlMDEiLCJuYW1lIjoiQWxlamFuZHJvIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQwOTY1NDM4LCJleHAiOjE3NDA5NzYyMzh9.PGOp4yb7vPi9YVPb7GPlo9yYEuRT1XblBIeHH7oD_6Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "sadsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "ksa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "chewe2007@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/67c506315e40949d30a18de2",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"67c506315e40949d30a18de2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUDCompany",
+			"item": [
+				{
+					"name": "saveCompany",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tigo",
+									"type": "text"
+								},
+								{
+									"key": "impactLevel",
+									"value": "High",
+									"type": "text"
+								},
+								{
+									"key": "yearsOfExperience",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "Category",
+									"value": "Technology",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "tigo@tigo.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "24280000",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ciudad de Guatemala",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/company/saveCompany",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								"saveCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByIDCompany",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/company/67c50bd82db605deadbb18b4",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								"67c50bd82db605deadbb18b4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompaniesByYearsOfExperience",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/company/years?years=20",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								"years"
+							],
+							"query": [
+								{
+									"key": "years",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompaniesByCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Category",
+									"value": "Technology",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/company/category?category=Technology",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								"category"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Technology"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A-z",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/company/sort/asc",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								"sort",
+								"asc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Z-A",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/company/sort/sort/desc",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								"sort",
+								"sort",
+								"desc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCompany",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/company/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCompany",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1MDYzMTVlNDA5NDlkMzBhMThkZTIiLCJ1c2VybmFtZSI6ImNoZXdlMDEiLCJuYW1lIjoiQWxlamFuZHJvIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQwOTY1NDM4LCJleHAiOjE3NDA5NzYyMzh9.PGOp4yb7vPi9YVPb7GPlo9yYEuRT1XblBIeHH7oD_6Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "sadsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "ksa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "chewe2007@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/67c506315e40949d30a18de2",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"67c506315e40949d30a18de2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "DownloadReport",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2636/report/download",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"download"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
