@@ -1,10 +1,10 @@
-import { copyFileSync } from "fs"
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
 export const connect = async()=>{
     try{
+        
         mongoose.connection.on('error', ()=>{
-            console.log('MongoDB | Could not be connected to mongidb')
+            console.log('MongoDB | Could not be connect to mongodb')
         })
         mongoose.connection.on('connecting', ()=>{
             console.log('MongoDB | try connecting')
@@ -21,11 +21,12 @@ export const connect = async()=>{
         mongoose.connection.on('disconnected', ()=>{
             console.log('MongoDB | disconnected')
         })
+
         await mongoose.connect(
             `${process.env.DB_SERVICE}://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
             {
-                maxPoolSize: 50,
-                serverSelectionTimeoutMS: 5000
+                maxPoolSize: 50, 
+                serverSelectionTimeoutMS: 5000 
             }
         )
     }catch(err){
